@@ -1,0 +1,27 @@
+input{
+  width: 150px;
+  height: 25px;
+  margin: 5px;
+}
+
+#form-container{
+  padding: 20px;
+  display: block;
+}
+
+#submit-button{
+  margin-left: 32px;
+  height: 40px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 220px;
+  text-align: center;
+}
+
+#longer-text{
+  width: 85%;
+}
+
+#comments-container{
+  margin-top: 60px;
+}

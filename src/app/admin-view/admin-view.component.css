@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#admin-view-container{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+#header-bar{
+  text-align: center;
+  background-color: #f5f0e4;
+  width: 100%;
+}
+
+h3{
+  font-weight: 400;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#users-container{
+  width: 100%;
+}
+
+#persistance-bar{
+  width: 100%;
+  display: flex;
+  background-color: #f5f0e4;
+  margin-top: 30px;
+}
+
+#persistance-header{
+  width: 320px;
+  text-align: right;
+  margin-right: 20px;
+  padding-top: 15px;
+}
+
+.persistance-button{
+  height: 60px;
+  max-width: calc(50% + 100px);
+  width: 100%;
+}
+
+.button-container{
+  width: calc((90%-320px)/3);
+  padding: 12px;
+}

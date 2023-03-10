@@ -1,0 +1,54 @@
+#bar-container{
+  width: calc(100%-20px);
+  background-color: #f5f0e4;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+}
+
+#user-data{
+  width: 320px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.role-button-box{
+  width: calc((90%-320px)/3);
+  padding: 12px;
+}
+
+.role-button{
+  height: 60px;
+  max-width: calc(50% + 100px);
+  width: 100%;
+}
+
+#email-txt{
+  font-size: smaller;
+  font-weight: 370;
+}
+
+.yes-button{
+  background-color: #bed9ba;
+}
+
+.no-button{
+  background-color: #d9baba;
+}
+
+
+@media (max-width: 700px) {
+  #bar-container{
+    display: block;
+  }
+
+  .role-button-box{
+    width: calc((100%-20px));
+    margin-left: 20px;
+  }
+
+  .role-button{
+    width: 100%;
+  }
+
+}

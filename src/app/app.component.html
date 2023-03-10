@@ -1,0 +1,61 @@
+<div>
+  <div id="top-bar">
+    <h1>Restauracja "SMAKI ŚWIATA"</h1>
+    <h3>Wiamy na stronie naszej restauracji</h3>
+    <div *ngIf="this.auth.isUsrLogged">
+      <h4> Jesteś zalogowany jako {{this.auth.currUser.userName}}</h4>
+    </div>
+
+    <div *ngIf="!this.auth.isUsrLogged">
+      <h4> Zaloguj się, aby skorzystać z wszystkich możliwości</h4>
+    </div>
+
+  </div>
+  <div id="nav-bar">
+    <div id = "info">
+      Więcej informacj
+    </div>
+
+    <div routerLink="/home" class = "nav-button" >
+      Nasza restauracja
+    </div>
+
+    <div routerLink="/menu" class = "nav-button">
+      Nasze menu
+    </div>
+
+    <div routerLink="/admin" class = "nav-button" *ngIf="this.auth.currUser.isAdmin">
+      Panel administratora
+    </div>
+
+    <div routerLink="/meneger" class = "nav-button" *ngIf="this.auth.currUser.isManager">
+      Panel managera
+    </div>
+
+    <div routerLink="/basket" class = "nav-button" *ngIf="this.auth.isUsrLogged">
+      Wybrane dania
+    </div>
+
+    <div routerLink="/login" class = "nav-button">
+      <div *ngIf="!this.auth.isUsrLogged">
+        Logowanie i rejestracja
+      </div>
+      <div *ngIf="this.auth.isUsrLogged">
+        Wylogowywanie
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--<app-restaurant></app-restaurant>
+
+  <app-home-card></app-home-card> -->
+
+  <router-outlet></router-outlet>
+
+</div>
+
+<!--
+<input type="text" [(ngModel)]="test">
+<div>dkjfsdghfsdhjg: {{test}}</div> -->

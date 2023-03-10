@@ -1,0 +1,99 @@
+#dish-bar{
+  width: 100%;
+  height: 300px;
+  background-color: #f5f0e4;
+  display: flex;
+  align-items: center;
+}
+
+#photo-container{
+  width: 300px;
+  height: 300px;
+  /*background-color: rgb(50, 90, 11);*/
+}
+
+#dishimg{
+  width: 100%;
+  height: 100%;
+}
+
+
+#content{
+  width: calc(40% - 120px);
+  height: 300px;
+  margin-left: 20px;
+  overflow: auto;
+}
+
+
+#ingredients-list{
+  width: calc(25% - 120px);
+  height: 300px;
+  margin-left: 20px;
+  overflow: auto;
+}
+
+
+#technical-information{
+  width: calc(35% - 120px);
+  height: 300px;
+  margin-left: 20px;
+}
+
+#buttons{
+  width: 100%;
+  height: 40px;
+  display: flexbox;
+}
+
+
+button{
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
+
+
+}
+
+
+@media (max-width: 1150px) {
+  #dish-bar{
+    display: inline-table;
+  }
+
+
+  #photo-container{
+    width: 100%;
+    height: auto;
+    background-color: none;
+  }
+
+  #dishimg{
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+
+  #content{
+    width: 95%;
+    height: 230px;
+    display: block;
+    margin-right: 10px;
+  }
+
+
+  #ingredients-list{
+    display: none;
+  }
+
+
+  #technical-information{
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    display: block;
+  }
+}
+

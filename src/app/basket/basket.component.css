@@ -1,0 +1,16 @@
+#basket-header{
+  margin-right: calc(260px + 5%);
+  text-align: right;
+  font-weight: 250;
+}
+
+
+#go-to-basket{
+  background-color: #f5f0e4;
+  width: 90%;
+  margin-left: 5%;
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}

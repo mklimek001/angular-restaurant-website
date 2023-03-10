@@ -1,0 +1,15 @@
+<div id = "go-to-basket">
+  <div id = "basket">
+    <p id = "basket-header">Wybrane dania</p>
+    <div  *ngFor="let basketDish of orderedDishes">
+      <div *ngIf="basketDish.number > 0">
+        <app-basket-elem [orderinfo]="basketDish"></app-basket-elem>
+      </div>
+    </div>
+
+    <div>
+      <app-basket-elem [orderinfo]="orderSummary"></app-basket-elem>
+    </div>
+
+  </div>
+</div>

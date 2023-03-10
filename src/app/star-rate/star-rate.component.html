@@ -1,0 +1,24 @@
+<div id = "rate-container">
+  <div id="stars" *ngIf="this.canRate">
+    <p>Oceń: </p>
+    <div id = "star1" class = "singleStar"
+    (mouseover)="star1over()" (mouseleave)="star1leave()"  (click)="star1click()">★</div>
+    <div id = "star2" class = "singleStar"
+    (mouseover)="star2over()" (mouseleave)="star2leave()"  (click)="star2click()">★</div>
+    <div id = "star3" class = "singleStar"
+    (mouseover)="star3over()" (mouseleave)="star3leave()"  (click)="star3click()">★</div>
+    <div id = "star4" class = "singleStar"
+    (mouseover)="star4over()" (mouseleave)="star4leave()"  (click)="star4click()">★</div>
+    <div id = "star5" class = "singleStar" #star5
+    (mouseover)="star5over()" (mouseleave)="star5leave()"  (click)="star5click()">★</div>
+  </div>
+
+  <div id="stars" *ngIf="!this.canRate">
+    <p>Już oceniłeś to danie</p>
+  </div>
+
+  <div id="summaryRate">
+    <p>Łączna ocena dania: {{rating}}  </p>
+    <div id = "summaryStar" class = "singleStar">★</div>
+  </div>
+</div>

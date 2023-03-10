@@ -1,0 +1,33 @@
+<div id = "dish-bar" [ngStyle]="{'background-color': dishinfo.maxquantity > taken+3 ? '#f5f0e4' : '#d1a388' }">
+  <div id = "photo-container" (mouseover) = toDetailedShow() routerLink="/details">
+    <img id = "dishimg" src="{{dishinfo.photos[0]}}">
+
+  </div>
+  <div id = "content">
+    <h2>{{dishinfo.name | uppercase}}</h2>
+    <h4>{{dishinfo.region | uppercase}}</h4>
+    <p>{{dishinfo.category}}</p>
+    <p>{{dishinfo.description}}</p>
+  </div>
+  <div id = "ingredients-list">
+    <h4>Lista składników</h4>
+    <ul>
+      <li *ngFor="let ingredient of dishinfo.ingredients"> {{ingredient}}</li>
+    </ul>
+  </div>
+  <div id = "technical-information">
+    <div>
+      <p>Cena jednej porcji: {{dishinfo.price}}$</p>
+      <p>Maksymalna ilość porcji: {{dishinfo.maxquantity}}</p>
+      <p>Pozostała ilość porcji: {{dishinfo.maxquantity - taken}}</p>
+      <div id = "buttons">
+        <button id = "add-meal" *ngIf="taken < dishinfo.maxquantity" (click) = addMeal()> + </button>
+        <button id = "remove-meal" (click) = removeMeal() [ngStyle]="{'margin-left': taken < dishinfo.maxquantity ? '0px' : '55px' }"> - </button>
+        <!--<button id = "deletedish" (click) = deleteDish()>🗑️</button>-->
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,43 @@
+<div id="form-container">
+  <div *ngIf="this.auth.currUser.canComment">
+    <h2>Dodaj komentarz</h2>
+    <form>
+      <label>
+        Nick
+        <input type="text" [(ngModel)]="nick" name="nick">
+      </label> <br/>
+      <label>
+        Nazwa
+        <input type="text" [(ngModel)]="name" name="name">
+      </label> <br/>
+      <label>
+        Recenzja dania
+        <input id = "longer-text" type="text" [(ngModel)]="text" name="txt">
+      </label> <br/>
+      <label>
+        Data zakupu
+        <input type="date" [(ngModel)]="date" name="date">
+      </label> <br/>
+
+    </form>
+    <button id = "submit-button" type="submit" (click)="submitted()" [disabled]="(!name || !nick || !text || text.length > 500 || text.length < 50)">Dodaj komentarz </button>
+  </div>
+
+  <div *ngIf="!this.auth.currUser.canComment">
+    <h2>Niestety nie możesz dodać komentarzy do tego dania</h2>
+  </div>
+
+  <div id = "comments-container">
+    <h2 *ngIf="(commentsList.length > 0)">Komentarze innych klientów</h2>
+    <h2 *ngIf="(commentsList.length == 0)">To danie nie ma jeszcze komentarzy</h2>
+
+    <div *ngFor="let comment of commentsList">
+      <app-single-comment [comment]="comment"></app-single-comment>
+
+    </div>
+
+  </div>
+
+</div>
+
+

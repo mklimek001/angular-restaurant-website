@@ -1,0 +1,106 @@
+*{
+  font-family: lato;
+  font-size: large;
+  font-weight: 365;
+}
+
+#dish-counter{
+  padding: 1px;
+  width: 400px;
+  margin-left: calc(50% - 200px);
+  font-size: medium;
+}
+
+#main-counter{
+  font-size: x-large;
+}
+
+#list-container{
+  width: 100%;
+}
+
+.dishpckg{
+  margin-top: 10px;
+}
+
+
+.minimal{
+  border: 8px solid #8cb562;
+}
+
+
+.maximal{
+  border: 8px solid #b56262;
+}
+
+
+#list-header{
+  background-color: #f5f0e4;
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+
+#all-dishes{
+  margin-left: 5%;
+  width: 90%;
+}
+
+#pagination-buttons{
+  background-color: #f5f0e4;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+
+#pagination-type-bar{
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-type-button{
+  height: 30px;
+  width: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.pagination-button{
+  height: 30px;
+  width: 38px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+#pagination-bar{
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+#add-new-dish{
+  background-color: #f5f0e4;
+  margin-left: 5%;
+  width: 90%;
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#new-dish-button{
+  margin-top: 20px;
+  margin-left: calc(50% - 150px);
+  height: 60px;
+  width: 300px;
+}

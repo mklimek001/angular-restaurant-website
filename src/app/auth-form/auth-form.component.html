@@ -1,0 +1,20 @@
+<div id="login-container">
+  <div *ngIf="!this.auth.isUsrLogged">
+    <h2>Logowanie i rejestracja</h2>
+    <div class="form-container">
+      <label class="auth-label">E-mail</label>
+      <input type="text" class="form-input" [(ngModel)]="email" name="email">
+    </div>
+    <div class="form-container">
+      <label class="auth-label">Hasło</label>
+      <input type="password" class="form-input" [(ngModel)]="password" name="paswd">
+    </div>
+    <div class="buttons-container">
+      <button class="login-button" (click)="onLogin()" [disabled] = "(!email || !password || password.length < 6)">Zaloguj</button>
+      <button class="login-button" (click)="onRegister()" [disabled] = "(!email || !password || password.length < 6)">Zarejestruj</button>
+    </div>
+  </div>
+
+    <h2 *ngIf="this.auth.isUsrLogged" id = "logout-header">Wyloguj się</h2>
+    <button class="login-button" id = "logout-button" (click)="onLogout()" *ngIf="this.auth.isUsrLogged" >Wyloguj</button>
+</div>

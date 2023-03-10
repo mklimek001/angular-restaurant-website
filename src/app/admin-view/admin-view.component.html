@@ -1,0 +1,29 @@
+<div id = "admin-view-container">
+  <div id = "header-bar">
+    <h3>Lista użytkowników systemu</h3>
+  </div>
+
+  <div id = "users-container">
+    <div *ngFor="let user of usersList">
+      <app-admin-user-bar [thisUser]="user"></app-admin-user-bar>
+    </div>
+  </div>
+
+  <div id="persistance-bar">
+    <div id="persistance-header">
+      <h3>Trwałość logowania</h3>
+    </div>
+
+    <div class="button-container">
+      <button class = "persistance-button" id="local" (click) = "this.changePersistance('local')">LOCAL</button>
+    </div>
+    <div class="button-container">
+      <button class = "persistance-button" id="session" (click) = "this.changePersistance('session')">SESSION</button>
+    </div>
+    <div class="button-container">
+      <button class = "persistance-button" id="none" (click) = "this.changePersistance('none')">NONE</button>
+    </div>
+
+</div>
+</div>
+

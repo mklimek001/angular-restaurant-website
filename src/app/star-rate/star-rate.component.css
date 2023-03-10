@@ -1,0 +1,34 @@
+#rate-container{
+  width: 100%;
+  padding: 2%;
+}
+
+#stars{
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+#summaryRate{
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.singleStar{
+  font-size: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  color: #787775;
+  cursor: pointer;
+}
+
+
+#summaryStar{
+  color: #b5923f;
+}
+
+.hoverStar{
+  color: #b5923f;
+}
+

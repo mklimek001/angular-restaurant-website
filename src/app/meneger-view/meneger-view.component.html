@@ -1,0 +1,42 @@
+<div id = "list-container">
+
+  <div id = "add-new-dish">
+    <button id="new-dish-button" routerLink="/newdish"> Dodaj nowe danie do menu</button>
+  </div>
+
+  <div id = "all-dishes" *ngIf="dishes != []; else nodishes">
+    <div>
+      <div class = "dishpckg" *ngFor="let dish of dishes; index as i">
+        <div *ngIf="(this.startInd <= i) && (i < this.lastInd)">
+          <app-meneger-bar [dishinfo]="dish"></app-meneger-bar>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="pagination-buttons">
+    <div id = "pagination-type-bar">
+      <p>Ilość dań na stronie: </p>
+      <button class="pagination-type-button" (click)="changeOnPage(5)"> 5 </button>
+      <button class="pagination-type-button" (click)="changeOnPage(10)"> 10 </button>
+      <button class="pagination-type-button" (click)="changeOnPage(20)"> 20 </button>
+    </div>
+
+    <div id = "pagination-bar">
+      <button class="pagination-button" (click)="changePage(0)"> ⇤ </button>
+      <button class="pagination-button" (click)="prevChangePage()"> ← </button>
+      <button class="pagination-button" *ngFor="let num of this.numbers" (click)="changePage(num)"> {{num + 1}} </button>
+      <button class="pagination-button" (click)="nextChangePage()"> → </button>
+      <button class="pagination-button" (click)="changePage(this.numOfPages - 1)"> ⇥ </button>
+
+    </div>
+  </div>
+
+  <ng-template #nodishes>
+    <div>
+      <h1>Przepraszamy, obecnie nie posiadamy w naszej ofercie żadnych dań</h1>
+    </div>
+  </ng-template>
+
+</div>

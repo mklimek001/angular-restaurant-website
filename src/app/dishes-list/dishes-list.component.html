@@ -1,0 +1,69 @@
+<div id = "list-container">
+  <div id = "list-header">
+    <h3>Lista dań dostępnych w naszej restauracji</h3>
+    <div id = "dish-counter" [ngStyle]="{'background-color': totalReserved >= 10 ? '#9fbbbf' : '#e3c8a8' }" *ngIf="this.auth.isUsrLogged">
+      <h4>Wybrane dania:</h4>
+      <p id = "main-counter">{{totalReserved}}</p>
+    </div>
+
+  </div>
+  <div id = "all-dishes" *ngIf="dishes != []; else nodishes">
+    <div>
+      <div class = "dishpckg" *ngFor="let dish of dishes; index as i" [ngClass]="{'minimal' : dish.price == minimumprice, 'maximal' : dish.price == maximumprice}">
+        <div *ngIf="(this.startInd <= i) && (i < this.lastInd)">
+          <app-single-dish [dishinfo]="dish" (takenfood)="reservation($event)" (todelete)="deleteDish($event)"></app-single-dish>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="pagination-buttons">
+    <div id = "pagination-type-bar">
+      <p>Ilość dań na stronie: </p>
+      <button class="pagination-type-button" (click)="changeOnPage(5)"> 5 </button>
+      <button class="pagination-type-button" (click)="changeOnPage(10)"> 10 </button>
+      <button class="pagination-type-button" (click)="changeOnPage(20)"> 20 </button>
+    </div>
+
+    <div id = "pagination-bar">
+      <button class="pagination-button" (click)="changePage(0)"> ⇤ </button>
+      <button class="pagination-button" (click)="prevChangePage()"> ← </button>
+      <button class="pagination-button" *ngFor="let num of this.numbers" (click)="changePage(num)"> {{num + 1}} </button>
+      <button class="pagination-button" (click)="nextChangePage()"> → </button>
+      <button class="pagination-button" (click)="changePage(this.numOfPages - 1)"> ⇥ </button>
+
+    </div>
+  </div>
+
+  <!--<div id = "go-to-basket">
+    <button id = "basket-button" (click) = showBasket()>
+      <h1>Pokaż koszyk</h1>
+    </button>
+    <div id = "basket" *ngIf="basketShowed">
+      <p id = "basket-header">Wybrane dania</p>
+      <div *ngFor="let basketDish of orderedDishes">
+        <div *ngIf="basketDish.number > 0">
+          <app-basket-elem [orderinfo]="basketDish"></app-basket-elem>
+        </div>
+      </div>
+
+      <div>
+        <app-basket-elem [orderinfo]="orderSummary"></app-basket-elem>
+      </div>
+
+    </div>
+  </div>
+
+  <div id = "adding-form">
+    <app-add-dish-form (newdish)="addingmeal($event)"></app-add-dish-form>
+  </div>-->
+
+  <ng-template #nodishes>
+    <div>
+      <h1>Przepraszamy, obecnie nie posiadamy w naszej ofercie żadnych dań</h1>
+    </div>
+  </ng-template>
+
+</div>
+

@@ -1,0 +1,20 @@
+<div id="bar-container"[ngStyle]="{'background-color': this.isCurrUser ? '#d1a388' : '#f5f0e4'}">
+  <div id="user-data">
+    <p>{{this.thisUser.userName}}</p>
+    <p id="email-txt">{{this.thisUser.emailAddress}}</p>
+  </div>
+  <div class="role-button-box">
+    <button class="role-button yes-button" *ngIf="this.thisUser.isAdmin" [disabled] = "this.isCurrUser" (click)="modifyUser('admin')">Odbierz rolę Admina</button>
+    <button class="role-button no-button" *ngIf="!this.thisUser.isAdmin" [disabled] = "this.isCurrUser" (click)="modifyUser('admin')">Nadaj rolę Admina</button>
+  </div>
+
+  <div class="role-button-box">
+    <button class="role-button yes-button" *ngIf="this.thisUser.isManager" [disabled] = "this.isCurrUser" (click)="modifyUser('menenger')">Odbierz rolę Menegera</button>
+    <button class="role-button no-button" *ngIf="!this.thisUser.isManager" [disabled] = "this.isCurrUser" (click)="modifyUser('menenger')">Nadaj rolę Menegera</button>
+  </div>
+
+  <div class="role-button-box">
+    <button class="role-button yes-button" *ngIf="this.thisUser.canComment" [disabled] = "this.isCurrUser" (click)="modifyUser('comment')">Zabroń komentować</button>
+    <button class="role-button no-button" *ngIf="!this.thisUser.canComment" [disabled] = "this.isCurrUser" (click)="modifyUser('comment')">Pozwól komentować</button>
+  </div>
+</div>

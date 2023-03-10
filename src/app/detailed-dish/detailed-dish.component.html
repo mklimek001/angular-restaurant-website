@@ -1,0 +1,42 @@
+<div id = "content-container">
+  <div id = title-bar>
+    <h2>{{dishinfo.name | uppercase}}</h2>
+    <h4>{{dishinfo.region | uppercase}}</h4>
+    <p>{{dishinfo.category}}</p>
+  </div>
+
+  <div id = "dish-bar">
+
+    <div id = "photo-container">
+      <img id = "dishimg" src="{{dishinfo.photos[showdindex]}}">
+      <div id = "minatures">
+        <img *ngFor="let photo of dishinfo.photos; let i = index" class = mini-img (click) = changeImg(i) src={{dishinfo.photos[i]}}>
+      </div>
+    </div>
+
+    <div id = "ingredients-list">
+      <p>{{dishinfo.description}}</p>
+      <h4>Lista składników</h4>
+      <ul>
+        <li *ngFor="let ingredient of dishinfo.ingredients"> {{ingredient}}</li>
+      </ul>
+    </div>
+    <div id = "technical-information">
+      <div>
+        <p>Cena jednej porcji: {{dishinfo.price}}$</p>
+        <p>Maksymalna ilość porcji: {{dishinfo.maxquantity}}</p>
+        <p>Pozostała ilość porcji: {{dishinfo.maxquantity - taken}}</p>
+        <div id = "buttons">
+          <button id = "add-meal" *ngIf="taken < dishinfo.maxquantity" (click) = addMeal()>+</button>
+          <button id = "remove-meal" (click) = removeMeal() [ngStyle]="{'margin-left': taken < dishinfo.maxquantity ? '0px' : '55px' }">-</button>
+        </div>
+      </div>
+
+      <app-star-rate></app-star-rate>
+
+    </div>
+
+
+  </div>
+  <app-comments-list [dishName]="dishinfo.name"></app-comments-list>
+</div>

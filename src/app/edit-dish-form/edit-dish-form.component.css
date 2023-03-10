@@ -1,0 +1,50 @@
+.form-group{
+  margin-left: 20px;
+  height: 35px;
+}
+
+
+.inner-form-group{
+  margin-left: 120px;
+  height: 35px;
+}
+
+.form-control{
+  margin-left: 6px;
+  height: 25px;
+  width: 150px;
+}
+
+#longer-text{
+  width: 55%;
+}
+
+h2{
+  margin-left: 30px;
+}
+
+
+.submit-button{
+  margin-left: 120px;
+  height: 40px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 220px;
+  text-align: center;
+}
+
+
+#form-container{
+  background-color: #f5f0e4;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+
+.photo-preview{
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+}
